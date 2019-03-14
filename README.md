@@ -1,4 +1,14 @@
 # Segundo projeto de Inteligência Artificial
+Duplas:
+------
+  - Amostragem: Welerson & Valmir
+  - Naive Bayes: Arianne & Adam
+  - Árvore Decisão: Fabiana & Rodrigo
+
+## Base de Dados: Não definido.
+
+## Algoritmo de Amostragem: Não definido.
+
 Descrição
 ------
   1. Extrair amostra da base de dados selecionada para uma tabela de amostragem utilizando algum algoritmo listado
@@ -10,13 +20,6 @@ Descrição
       - Floresta randômica (opcional)
   1. Responder as questões com base nos resultados obtidos
 
-Duplas:
-------
-  - Amostragem: Welerson & Valmir
-  - Naive Bayes: Arianne & Adam
-  - Árvore Decisão: Fabiana & Rodrigo
-
-## Base de Dados: Não definido.
-
-## Algoritmo de Amostragem: Não definido.
-
+## Linguagem de programação: Python
+     Bibliotecas utilizadas: Numpy, pandas, jupyter, scikit-learn, graphviz, matplotlib, collections, itertools, math, random, csv e IPython.
+     
