@@ -1,11 +1,11 @@
-# Segundo projeto de Inteligência Artificial
+﻿# Segundo projeto de Inteligência Artificial
 Duplas:
 ------
   - Amostragem: Welerson & Valmir
   - Naive Bayes: Arianne & Adam
   - Árvore Decisão: Fabiana & Rodrigo
 
-## Base de Dados: Não definido.
+## Base de Dados: Coronary Risk.
 
 ## Algoritmo de Amostragem: Não definido.
 
