@@ -1,4 +1,4 @@
-# Segundo projeto de Inteligência Artificial
+﻿# Segundo projeto de Inteligência Artificial
 Descrição
 ------
   1. Extrair amostra da base de dados selecionada para uma tabela de amostragem utilizando algum algoritmo listado
@@ -16,7 +16,7 @@ Duplas:
   - Naive Bayes: Arianne & Adam
   - Árvore Decisão: Fabiana & Rodrigo
 
-## Base de Dados: Não definido.
+## Base de Dados: Coronary Risk
 
 ## Algoritmo de Amostragem: Não definido.
 
