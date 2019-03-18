@@ -5,7 +5,7 @@ Duplas:
   - Naive Bayes: Arianne & Adam
   - Árvore Decisão: Fabiana & Rodrigo
 
-## Base de Dados: [Coronary Risk]:https://www.norsys.com/netlibrary/index.htm
+## Base de Dados: [Coronary Risk](https://www.norsys.com/netlibrary/index.htm)
 
 ## Algoritmo de Amostragem: Não definido.
 
