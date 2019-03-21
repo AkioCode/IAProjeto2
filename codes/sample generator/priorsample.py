@@ -51,3 +51,40 @@ if __name__ == '__main__':
 	
 	#TESTE
 	#print(samples)
+	
+	#Conta o numero de vezes q cada variavel assume uma confirmação
+	for i in range(len(samples)):
+        if samples[i][0] == 1: 
+            contAsia += 1 
+        if samples[i][1] == 1: 
+            contFuma += 1 
+        if samples[i][2] == 1: 
+            contTuber += 1 
+        if samples[i][3] == 1: 
+            contCan += 1 
+        if samples[i][4] == 1: 
+            contBronq += 1 
+        if samples[i][5] == 1: 
+            contOU += 1 
+        if samples[i][6] == 1: 
+            contRaio += 1 
+        if samples[i][7] == 1: 
+            contDisp += 1 
+    
+    print("Visitou Asia->", contAsia ," de ", 10)
+    print("Fuma->", contFuma ," de ", 10)
+    print("Tuberculose->", contTuber ," de ", 10)
+    print("Cancer Pulmao->", contCan ," de ", 10)
+    print("Bronquite->", contBronq ," de ", 10)
+    print("Tuberculose ou Cancer->", contOU ," de ", 10)
+    print("RaioX->", contRaio ," de ", 10)
+    print("Dispneia->", contDisp ," de ", 10)
+    
+    #escreve uma amostra por linha no arquivo
+    arquivo = open('TESTE.txt', 'w')
+     
+    for i in range(len(samples)) :
+        linha = str(samples[i]) + "\n"
+        arquivo.write(linha)
+   
+    arquivo.close()
