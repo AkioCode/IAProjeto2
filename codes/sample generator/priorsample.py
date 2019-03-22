@@ -71,20 +71,33 @@ if __name__ == '__main__':
         if samples[i][7] == 1: 
             contDisp += 1 
     
-    print("Visitou Asia->", contAsia ," de ", 10)
-    print("Fuma->", contFuma ," de ", 10)
-    print("Tuberculose->", contTuber ," de ", 10)
-    print("Cancer Pulmao->", contCan ," de ", 10)
-    print("Bronquite->", contBronq ," de ", 10)
-    print("Tuberculose ou Cancer->", contOU ," de ", 10)
-    print("RaioX->", contRaio ," de ", 10)
-    print("Dispneia->", contDisp ," de ", 10)
+    #esses prints eram so pra testes
+    print("Visitou Asia --------->","%.0f" %((contAsia/len(samples))*100),"% das amostras")
+    print("Fuma ----------------->","%.0f" %((contFuma/len(samples))*100),"% das amostras")
+    print("Tuberculose ---------->","%.0f" %((contTuber/len(samples))*100),"% das amostras")
+    print("Cancer Pulmao -------->","%.0f" %((contCan/len(samples))*100),"% das amostras")
+    print("Bronquite ------------>","%.0f" %((contBronq/len(samples))*100),"% das amostras", 10)
+    print("Tuberculose ou Cancer->","%.0f" %((contOU/len(samples))*100),"% das amostras", 10)
+    print("RaioX ---------------->","%.0f" %((contRaio/len(samples))*100),"% das amostras")
+    print("Dispneia ------------->","%.0f" %((contDisp/len(samples))*100),"% das amostras")
     
-    #escreve uma amostra por linha no arquivo
-    arquivo = open('TESTE.txt', 'w')
-     
-    for i in range(len(samples)) :
-        linha = str(samples[i]) + "\n"
-        arquivo.write(linha)
-   
+    arquivo = open('Caracteristicas.txt', 'r') 
+    conteudo = arquivo.readlines()
+    
+    linha0=("TOTAL DAS AMOSTRAS: "+str(len(samples))+"\n")
+    linha1=("Visitou Asia ---------> "+str("%.0f" %((contAsia/len(samples))*100)) +"% das amostras"+"\n")
+    linha2=("Fuma -----------------> "+str("%.0f" %((contFuma/len(samples))*100)) +"% das amostras"+"\n")
+    linha3=("Tuberculose ----------> "+str("%.0f" %((contTuber/len(samples))*100)) +"% das amostras"+"\n")
+    linha4=("Cancer Pulmao --------> "+str("%.0f" %((contCan/len(samples))*100)) +"% das amostras"+"\n")
+    linha5=("Bronquite ------------> "+str("%.0f" %((contBronq/len(samples))*100)) +"% das amostras"+"\n")
+    linha6=("Tuberculose ou Cancer-> "+str("%.0f" %((contOU/len(samples))*100)) +"% das amostras"+"\n")
+    linha7=("RaioX ----------------> "+str("%.0f" %((contRaio/len(samples))*100)) +"% das amostras"+"\n")
+    linha8=("Dispneia -------------> "+str("%.0f" %((contDisp/len(samples))*100)) +"% das amostras"+"\n")
+    
+    linhaMaster = linha0+ linha1 + linha2 + linha3+ linha4+ linha5+ linha6+ linha7+ linha8
+    conteudo.append(linhaMaster)
+    
+    arquivo = open('Caracteristicas.txt', 'w')
+    arquivo.writelines(conteudo)
+    
     arquivo.close()
