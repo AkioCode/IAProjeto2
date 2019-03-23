@@ -1,0 +1,81 @@
+A partir dos valores reais de probabilidade dado na rede disponível no site, escolheremos a quantidade de sample baseado no valor do erro de cada característica (nó da rede) acumulado. O erro acumulado (E) é o valor absoluto de cada probabilidade da amostra(Pa_i) menos cada valor de probabilidade original (Po_i), i.e., E = SOMATÓRIO(|Pa_i - Po_i|)
+
+-Vaores Reais das amostras, para o caso positivo em todos:
+
+Visitou Asia ---------> 1 % das amostras
+Fuma -----------------> 50 % das amostras
+Tuberculose ----------> 1 % das amostras
+Cancer Pulmao --------> 5 % das amostras
+Bronquite ------------> 45 % das amostras
+Tuberculose ou Cancer-> 6 % das amostras
+RaioX ----------------> 89 % das amostras
+Dispneia -------------> 43 % das amostras
+
+
+OBS: Foi pego o melhor Erro E de 3 rodadas de amostras geradas para cada um dos E mostrado abaixo.
+
+-Valores para 100 amostras:
+
+Visitou Asia ---------> 1 % das amostras
+Fuma -----------------> 55 % das amostras
+Tuberculose ----------> 0 % das amostras
+Cancer Pulmao --------> 6 % das amostras
+Bronquite ------------> 39 % das amostras 
+Tuberculose ou Cancer-> 9 % das amostras 
+RaioX ----------------> 83 % das amostras
+Dispneia -------------> 37 % das amostras
+
+E = 28
+
+->Valores para 1000 amostras:
+Visitou Asia ---------> 2 % das amostras
+Fuma -----------------> 50 % das amostras
+Tuberculose ----------> 2 % das amostras
+Cancer Pulmao --------> 7 % das amostras
+Bronquite ------------> 44 % das amostras
+Tuberculose ou Cancer-> 9 % das amostras
+RaioX ----------------> 87 % das amostras
+Dispneia -------------> 44 % das amostras
+
+E = 11
+
+->Valores para 10000 amostras:
+Visitou Asia ---------> 2 % das amostras
+Fuma -----------------> 50 % das amostras
+Tuberculose ----------> 2 % das amostras
+Cancer Pulmao --------> 6 % das amostras
+Bronquite ------------> 45 % das amostras 
+Tuberculose ou Cancer-> 9 % das amostras 
+RaioX ----------------> 87 % das amostras
+Dispneia -------------> 45 % das amostras
+
+E = 10	
+
+->Valores para 100000 amostras:
+Visitou Asia ---------> 2 % das amostras
+Fuma -----------------> 50 % das amostras
+Tuberculose ----------> 2 % das amostras
+Cancer Pulmao --------> 6 % das amostras
+Bronquite ------------> 46 % das amostras 
+Tuberculose ou Cancer-> 9 % das amostras 
+RaioX ----------------> 87 % das amostras
+Dispneia -------------> 45 % das amostras
+
+E = 11
+
+-> Valores para 1000000 amostras:
+Visitou Asia ---------> 2 % das amostras
+Fuma -----------------> 50 % das amostras
+Tuberculose ----------> 2 % das amostras
+Cancer Pulmao --------> 6 % das amostras
+Bronquite ------------> 46 % das amostras 
+Tuberculose ou Cancer-> 9 % das amostras 
+RaioX ----------------> 86 % das amostras
+Dispneia -------------> 46 % das amostras
+
+E = 13
+
+
+A partir dos dados acima decidimos, a priori, que 1000 e 10000 amostras são suficientes pra representar de forma satisfatória a rede dada.
+
+

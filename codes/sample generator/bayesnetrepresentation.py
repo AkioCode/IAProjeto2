@@ -9,14 +9,14 @@ classe = 7
 
 #Relacao de dependência entre os nós (ordem de prioridade):
 d = []
-d.append([])
-d.append([])
-d.append([0])
-d.append([1])
-d.append([1])
-d.append([2, 3])
-d.append([5])
-d.append([5, 7])
+d.append([])  	# 0:Visit Asia
+d.append([])  	# 1:Fuma
+d.append([0]) 	# 2:Turbeculos <- Visit Asia 
+d.append([1]) 	# 3:Cancer Pulmao <- Fuma
+d.append([1]) 	# 4:Bronquite <- Fuma
+d.append([2, 3])# 5:Turbe. ou Cancer. <- Turbe., Cancer.
+d.append([5]) 	# 6:RaioX <- 5
+d.append([5, 4])# 7:Dispinea <- Tuber. ou Cancer. , Bronquite
 
 #probabilidades positivas para os 8 nós (inteiro de 1 a 100)
 #A probabilidade será recursiva para dentro da tupla de acordo com a quantidade de dependências sendo primeiro valor a negacao da condicao
@@ -24,7 +24,7 @@ d.append([5, 7])
 # para duas dependências p[k] = ((--, -+), (+-, ++))
 
 
-# ESSES VALORES ESTAO ERRADOS SAO PARA TESTE, PEGAR VALORES REAIS E APAGAR ESTA LINHA
+# Probabilidades
 p = [0,1,2,3,4,5,6,7] # inicializando 8 nós
 p[0] = 1
 p[1] = 50
