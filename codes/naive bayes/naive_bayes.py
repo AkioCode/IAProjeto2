@@ -3,6 +3,8 @@ from collections import defaultdict
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 import math
+from math import pi
+from math import e
 import random
 import csv
 import re
@@ -38,7 +40,7 @@ class GaussNB_Stratch:
         while len(trainSet) < trainSize:
             index = random.randrange(len(copy))
             trainSet.append(copy.pop(index))
-        return [np.array(trainSet), np.array(copy)]
+        return [np.asarray(trainSet), np.asarray(copy)]
 
     def separateByClass(self, dataset):
         """
@@ -211,7 +213,7 @@ class GaussNB_Stratch:
         return correct / float(len(testSet)) * 100.0
 
 def main():
-    filename = 'C:/Users/Anne/Desktop/nb/diabetes.csv'
+    filename = 'diabetes.csv'
 
     nb = GaussNB_Stratch()
     data = nb.loadCsv(filename)
@@ -222,13 +224,13 @@ def main():
     predicted = nb.predict(testList)
     accuracy = nb.accuracy(testList, predicted)
 
-    print('Accuracy (stratch): {0}'.format(accuracy))
+    print('Accuracy (stratch): {0} %'.format(accuracy))
 
     #treinamento e teste usando a lib do scikit
     model = GaussianNB()
-    model.fit(trainList[:, 0:7], testList[:, -1])
+    model.fit(trainList[:, 0:7], trainList[:, -1])
     predicted = model.predict(testList[:, 0:7])
-    print('Accuracy (scikit): {0}'.format(accuracy_score(testList[:, -1], predicted)))
+    print('Accuracy (scikit): {0} %'.format(accuracy_score(testList[:, -1], predicted) * 100))
 
 
 if __name__ == '__main__':
