@@ -27,6 +27,49 @@ def generateSample(d, p):
 def swapPosition(samples, index):
 	##### Colocar código swap aqui para todos os items de samples
 	return samples
+	
+def mostrarPorcentagens(samples):
+	
+	contAsia, contFuma, contTuber, contCan, contBronq, contOU, contRaio, contDisp = 0, 0, 0, 0, 0, 0, 0, 0
+	
+	for i in range(len(samples)):
+		if samples[i][0] == 1:
+			contAsia += 1
+		if samples[i][1] == 1:
+			contFuma += 1
+		if samples[i][2] == 1:
+			contTuber += 1
+		if samples[i][3] == 1:
+			contCan += 1
+		if samples[i][4] == 1:
+			contBronq += 1
+		if samples[i][5] == 1:
+			contOU += 1
+		if samples[i][6] == 1:
+			contRaio += 1
+		if samples[i][7] == 1:
+			contDisp += 1
+
+    #esses prints eram so pra testes
+	print("Visitou Asia --------->","%.0f" %((contAsia/len(samples))*100),"% das amostras")
+	print("Fuma ----------------->","%.0f" %((contFuma/len(samples))*100),"% das amostras")
+	print("Tuberculose ---------->","%.0f" %((contTuber/len(samples))*100),"% das amostras")
+	print("Cancer Pulmao -------->","%.0f" %((contCan/len(samples))*100),"% das amostras")
+	print("Bronquite ------------>","%.0f" %((contBronq/len(samples))*100),"% das amostras", 10)
+	print("Tuberculose ou Cancer->","%.0f" %((contOU/len(samples))*100),"% das amostras", 10)
+	print("RaioX ---------------->","%.0f" %((contRaio/len(samples))*100),"% das amostras")
+	print("Dispneia ------------->","%.0f" %((contDisp/len(samples))*100),"% das amostras")
+
+def salvarSamples(samples):
+	arquivo = open('samplesTESTANDO.txt', 'w')
+	for x in samples:
+		linha = '';
+		for val in x:
+			linha += str(val) + ","
+		linha = linha[:-1]
+		linha += "\n"
+		arquivo.write(linha)
+	arquivo.close()
 
 #### main program ####
 ### Chamada do tipo: python3 priorsample.py 1000
@@ -46,58 +89,8 @@ if __name__ == '__main__':
 		#troca ultima posicao de cada sample pela possicao q esta a classe (classIndex)
 		samples = swapPosition(samples, classIndex)	
 		
+	#Mostrando porcentagem das caracteristicas geradas para comparar com os dados reais
+	mostrarPorcentagens(samples)
+	
 	#jogar no arquivo, de modo organizado, os samples gerados 
-	
-	
-	#TESTE
-	#print(samples)
-	
-	#Conta o numero de vezes q cada variavel assume uma confirmação
-	for i in range(len(samples)):
-        if samples[i][0] == 1: 
-            contAsia += 1 
-        if samples[i][1] == 1: 
-            contFuma += 1 
-        if samples[i][2] == 1: 
-            contTuber += 1 
-        if samples[i][3] == 1: 
-            contCan += 1 
-        if samples[i][4] == 1: 
-            contBronq += 1 
-        if samples[i][5] == 1: 
-            contOU += 1 
-        if samples[i][6] == 1: 
-            contRaio += 1 
-        if samples[i][7] == 1: 
-            contDisp += 1 
-    
-    #esses prints eram so pra testes
-    print("Visitou Asia --------->","%.0f" %((contAsia/len(samples))*100),"% das amostras")
-    print("Fuma ----------------->","%.0f" %((contFuma/len(samples))*100),"% das amostras")
-    print("Tuberculose ---------->","%.0f" %((contTuber/len(samples))*100),"% das amostras")
-    print("Cancer Pulmao -------->","%.0f" %((contCan/len(samples))*100),"% das amostras")
-    print("Bronquite ------------>","%.0f" %((contBronq/len(samples))*100),"% das amostras", 10)
-    print("Tuberculose ou Cancer->","%.0f" %((contOU/len(samples))*100),"% das amostras", 10)
-    print("RaioX ---------------->","%.0f" %((contRaio/len(samples))*100),"% das amostras")
-    print("Dispneia ------------->","%.0f" %((contDisp/len(samples))*100),"% das amostras")
-    
-    arquivo = open('Caracteristicas.txt', 'r') 
-    conteudo = arquivo.readlines()
-    
-    linha0=("TOTAL DAS AMOSTRAS: "+str(len(samples))+"\n")
-    linha1=("Visitou Asia ---------> "+str("%.0f" %((contAsia/len(samples))*100)) +"% das amostras"+"\n")
-    linha2=("Fuma -----------------> "+str("%.0f" %((contFuma/len(samples))*100)) +"% das amostras"+"\n")
-    linha3=("Tuberculose ----------> "+str("%.0f" %((contTuber/len(samples))*100)) +"% das amostras"+"\n")
-    linha4=("Cancer Pulmao --------> "+str("%.0f" %((contCan/len(samples))*100)) +"% das amostras"+"\n")
-    linha5=("Bronquite ------------> "+str("%.0f" %((contBronq/len(samples))*100)) +"% das amostras"+"\n")
-    linha6=("Tuberculose ou Cancer-> "+str("%.0f" %((contOU/len(samples))*100)) +"% das amostras"+"\n")
-    linha7=("RaioX ----------------> "+str("%.0f" %((contRaio/len(samples))*100)) +"% das amostras"+"\n")
-    linha8=("Dispneia -------------> "+str("%.0f" %((contDisp/len(samples))*100)) +"% das amostras"+"\n")
-    
-    linhaMaster = linha0+ linha1 + linha2 + linha3+ linha4+ linha5+ linha6+ linha7+ linha8
-    conteudo.append(linhaMaster)
-    
-    arquivo = open('Caracteristicas.txt', 'w')
-    arquivo.writelines(conteudo)
-    
-    arquivo.close()
+	salvarSamples(samples)
