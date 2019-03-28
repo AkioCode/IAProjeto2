@@ -1,5 +1,5 @@
 #####################################################
-# Chest Clinic Bayes net representatin  library 	# 
+# Chest Clinic Bayes net representatin  library     # 
 #####################################################
 
 #Ordem seguida pelo prior: Visitou Asia(Sim,Nao); Fuma(Sim,Nao); Tuberculose(Sim,Nao); Cancer Pulmao(Sim,Nao); Bronquite(Sim,Nao); Tuberculose ou Cancer(VERDADE, FALSO); RaioX(Normal,Abnormal); Dispneia(Sim,Nao); -> Nó(1,0)
